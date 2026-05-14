@@ -1,0 +1,14 @@
+{
+	"root": false,
+	"extends": "//",
+	"files": {
+		"ignoreUnknown": true
+	},
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"noConsole": "off"
+			}
+		}
+	}
+}

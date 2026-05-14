@@ -1,0 +1,45 @@
+{
+	"name": "@workspace/db",
+	"version": "0.0.1",
+	"type": "module",
+	"author": "neolaner",
+	"scripts": {
+		"dev": "drizzle-kit studio",
+		"check": "biome check && tsc --noEmit",
+		"format": "biome format --write .",
+		"format:check": "biome format .",
+		"lint": "biome check",
+		"lint:fix": "biome check --write --unsafe",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate",
+		"db:push": "drizzle-kit push",
+		"db:studio": "drizzle-kit studio",
+		"db:pull": "pnpm drizzle-kit pull",
+		"db:seed": "tsx --env-file=.env src/lib/seed.ts",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.44.7",
+		"drizzle-zod": "^0.8.3",
+		"postgres": "^3.4.7",
+		"zod": "^3.25.76"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.8",
+		"@turbo/gen": "^2.6.1",
+		"@types/node": "^22.19.1",
+		"@workspace/typescript-config": "workspace:*",
+		"cross-env": "^7.0.3",
+		"drizzle-kit": "^0.31.7",
+		"tsx": "^4.21.1",
+		"typescript": "^5.9.3"
+	},
+	"exports": {
+		".": "./src/index.ts",
+		"./tables": "./src/tables/index.ts",
+		"./tables/*": "./src/tables/*.ts",
+		"./lib": "./src/lib/index.ts",
+		"./lib/*": "./src/lib/*.ts",
+		"./lib/types": "./src/lib/types/index.ts"
+	}
+}
