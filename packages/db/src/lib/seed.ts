@@ -1,10 +1,23 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-import { industries, pageContents, pageSections, pageTypes } from "../tables";
+import {
+	pageContents,
+	pageContentsRelations,
+	pageSections,
+	pageSectionsRelations,
+} from "../tables";
 
 const conn = postgres(process.env.DATABASE_URL!);
 
+const schema = {
+	pageContents,
+	pageSections,
+	pageContentsRelations,
+	pageSectionsRelations,
+};
+
 export const db = drizzle(conn, {
+	schema,
 	casing: "snake_case",
 });
 
@@ -12,29 +25,7 @@ async function seed() {
 	console.log("🌱 Starting database seeding...");
 
 	// ========================
-	// 1. Page Types
-	// ========================
-	await db
-		.insert(pageTypes)
-		.values([
-			{ slug: "benefits", name: "Benefits" },
-			{ slug: "features", name: "Features" },
-		])
-		.onConflictDoNothing();
-
-	// ========================
-	// 2. Industries
-	// ========================
-	await db
-		.insert(industries)
-		.values([
-			{ slug: "clothing-store", name: "فروشگاه پوشاک" },
-			{ slug: "restaurant", name: "رستوران و کافی‌شاپ" },
-		])
-		.onConflictDoNothing();
-
-	// ========================
-	// 3. Benefits - Clothing Store
+	// Benefits - Clothing Store
 	// ========================
 	const [benefitsClothing] = await db
 		.insert(pageContents)
@@ -48,6 +39,7 @@ async function seed() {
 				"فروشگاه پوشاک خود را به کسب‌وکاری وفادارمحور تبدیل کنید",
 			heroSubheadline:
 				"جمع‌آوری شماره مشتریان و ارسال پیامک‌های هدفمند برای افزایش فروش فصلی",
+			heroImage: "/images/hero/clothing-store.jpg",
 			ctaText: "همین حالا مشاوره رایگان دریافت کنید",
 			activeStores: "۱۱۰۰۰",
 		})
@@ -79,7 +71,7 @@ async function seed() {
 	}
 
 	// ========================
-	// 4. Benefits - Restaurant
+	// Benefits - Restaurant
 	// ========================
 	const [benefitsRestaurant] = await db
 		.insert(pageContents)
@@ -92,6 +84,7 @@ async function seed() {
 			heroHeadline: "رستوران خود را همیشه پر از مشتری نگه دارید",
 			heroSubheadline:
 				"با باشگاه مشتریان و پیامک‌های هوشمند فروش را افزایش دهید",
+			heroImage: "/images/hero/restaurant.jpg",
 			ctaText: "همین حالا مشاوره رایگان دریافت کنید",
 			activeStores: "۵۶۰۰",
 		})
@@ -123,7 +116,7 @@ async function seed() {
 	}
 
 	// ========================
-	// 5. Features - Clothing Store
+	// Features - Clothing Store
 	// ========================
 	const [featuresClothing] = await db
 		.insert(pageContents)
@@ -135,6 +128,7 @@ async function seed() {
 			heroHeadline: "ویژگی‌های هوشمند دایرکت مخصوص فروشگاه پوشاک",
 			heroSubheadline:
 				"ابزارهایی که فروشگاه شما را به سطح بالاتری از مدیریت مشتری می‌رساند",
+			heroImage: "/images/hero/clothing-store-features.jpg",
 			ctaText: "آماده‌اید فروشگاه خود را هوشمند کنید؟",
 			activeStores: "۱۱۰۰۰",
 		})
@@ -170,7 +164,7 @@ async function seed() {
 	}
 
 	// ========================
-	// 6. Features - Restaurant
+	// Features - Restaurant
 	// ========================
 	const [featuresRestaurant] = await db
 		.insert(pageContents)
@@ -182,6 +176,7 @@ async function seed() {
 			heroHeadline: "ویژگی‌های هوشمند دایرکت مخصوص رستوران",
 			heroSubheadline:
 				"ابزارهایی که رستوران شما را همیشه پر از مشتری نگه می‌دارد",
+			heroImage: "/images/hero/restaurant-features.jpg",
 			ctaText: "آماده‌اید رستوران خود را هوشمند کنید؟",
 			activeStores: "۵۶۰۰",
 		})
@@ -216,7 +211,6 @@ async function seed() {
 	console.log("✅ Database seeded successfully with 4 pages!");
 }
 
-// Run the seed
 seed()
 	.catch((err) => {
 		console.error("❌ Seeding failed:", err);
