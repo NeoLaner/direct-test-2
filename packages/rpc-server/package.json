@@ -25,6 +25,8 @@
 		"@turbo/gen": "^2.6.1",
 		"@types/node": "^22.19.1",
 		"@workspace/typescript-config": "workspace:*",
+		"@workspace/db": "workspace:*",
+		"drizzle-orm": "^0.44.7",
 		"cross-env": "^7.0.3",
 		"typescript": "^5.9.3"
 	},
