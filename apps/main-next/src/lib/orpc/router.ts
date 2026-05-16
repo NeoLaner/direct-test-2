@@ -1,5 +1,7 @@
-import { createGreetingRouter } from "@workspace/rpc-server";
+import { createGreetingRouter, createPageRouter } from "@workspace/rpc-server";
+import { db } from "../db";
 
 export const router = {
-	user: createGreetingRouter(),
+	greeting: createGreetingRouter(),
+	page: createPageRouter(db),
 };

@@ -14,7 +14,7 @@ const handler = new OpenAPIHandler(router, {
 			schemaConverters: [new ZodToJsonSchemaConverter()],
 			specGenerateOptions: {
 				info: {
-					title: "NEOM OpenAPI",
+					title: "Direct OpenAPI",
 					version: "1.0.0",
 				},
 			},
