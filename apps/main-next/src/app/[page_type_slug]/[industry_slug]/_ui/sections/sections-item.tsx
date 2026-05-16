@@ -13,8 +13,8 @@ type SectionsItemProps = {
 
 export function SectionsItem({ title, items, className }: SectionsItemProps) {
 	return (
-		<div className={cn("mb-16 w-full", className)}>
-			<h3 className="mb-8 text-center font-semibold text-3xl">{title}</h3>
+		<section className={cn("mb-16 w-full", className)}>
+			<h2 className="mb-8 text-center font-semibold text-3xl">{title}</h2>
 
 			<div className="flex flex-col gap-4 md:flex-row">
 				{items.map((item) => (
@@ -25,6 +25,6 @@ export function SectionsItem({ title, items, className }: SectionsItemProps) {
 					/>
 				))}
 			</div>
-		</div>
+		</section>
 	);
 }

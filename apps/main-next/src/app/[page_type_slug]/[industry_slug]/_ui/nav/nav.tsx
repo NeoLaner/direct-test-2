@@ -12,14 +12,14 @@ function Nav({
 	className?: string;
 }) {
 	return (
-		<div
+		<nav
 			className={cn(
 				"flex w-full justify-between border-b-2 p-4",
 				className,
 			)}
 		>
 			{children}
-		</div>
+		</nav>
 	);
 }
 
