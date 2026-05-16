@@ -4,7 +4,7 @@
 
 ## 🎯 Project Overview
 
-**Main-Next** (stream-tube) is the core web application of the **Direct** monorepo. It delivers dynamic business landing pages tailored to specific industries through a **server-first architecture**, ensuring optimal performance, SEO, and type safety across the entire stack.
+**Main-Next** is the core web application of the **Direct** monorepo. It delivers dynamic business landing pages tailored to specific industries through a **server-first architecture**, ensuring optimal performance, SEO, and type safety across the entire stack.
 
 ### Key Characteristics
 - ✅ **Server-Side Rendering (SSR)** - All content fetched and rendered on the server
@@ -138,57 +138,6 @@ All data fetching happens **before** React rendering on the server. The browser 
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- **Node.js** ≥ 22.x
-- **pnpm** ≥ 10.4
-- **PostgreSQL** (via Docker or external)
-
-### Installation
-
-1. **Install dependencies**
-   ```bash
-   pnpm install
-   ```
-
-2. **Start PostgreSQL** (Docker)
-   ```bash
-   pnpm docker:up
-   ```
-
-3. **Setup database**
-   ```bash
-   pnpm db:push      # Apply schema migrations
-   pnpm db:seed      # Populate sample data (if seeder exists)
-   ```
-
-4. **Start development server**
-   ```bash
-   pnpm dev
-   ```
-   Open [http://localhost:3021](http://localhost:3021) in your browser.
-
----
-
-## 📜 Available Scripts
-
-| Command | Purpose |
-|---------|---------|
-| `pnpm dev` | Start dev server with hot reload |
-| `pnpm dev:inspect` | Start with Node debugger enabled |
-| `pnpm build` | Build production bundle |
-| `pnpm start` | Start production server |
-| `pnpm check` | Run Biome linting + TypeScript check |
-| `pnpm lint:fix` | Auto-fix linting issues |
-| `pnpm db:push` | Apply database migrations |
-| `pnpm db:pull` | Pull schema from database |
-| `pnpm db:seed` | Seed database with initial data |
-| `pnpm db:studio` | Open Drizzle Studio (GUI) |
-| `pnpm docker:up` | Start PostgreSQL container |
-| `pnpm docker:down` | Stop PostgreSQL container |
-
----
 
 ## 🔗 Monorepo Dependencies
 
@@ -220,12 +169,6 @@ All components follow a **composable pattern**, built with:
 - **Responsive Design** (mobile-first)
 - **Server/Client boundary** awareness
 
-### Key Components
-- **Hero** - Headline, subheadline, and image display
-- **Sections** - Dynamic content areas (features, pricing, testimonials, etc.)
-- **CTA** - Call-to-action buttons with scroll functionality
-- **Navigation** - Header with branding and menu
-- **Footer** - Copyright and links
 
 ---
 
