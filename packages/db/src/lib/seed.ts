@@ -42,6 +42,8 @@ async function seed() {
 			heroImage: "/images/hero/clothing-store.jpg",
 			ctaText: "همین حالا مشاوره رایگان دریافت کنید",
 			activeStores: "۱۱۰۰۰",
+			keywords:
+				"فروشگاه پوشاک, افزایش فروش, پیامک تبلیغاتی, باشگاه مشتریان, دایرکت",
 		})
 		.onConflictDoNothing()
 		.returning({ id: pageContents.id });
@@ -53,18 +55,25 @@ async function seed() {
 			title: "مزایای دایرکت برای فروشگاه پوشاک",
 			items: [
 				{
+					id: 1,
 					title: "جمع‌آوری آسان شماره مشتریان",
 					desc: "در ورودی فروشگاه و هنگام پرداخت",
 				},
 				{
+					id: 2,
 					title: "ارسال تخفیف‌های فصلی و حراج",
 					desc: "مانتو، شلوار، لباس کودک و ...",
 				},
 				{
+					id: 3,
 					title: "وفادارسازی مشتریان",
 					desc: "پیامک تولد و خرید مجدد با تخفیف ویژه",
 				},
-				{ title: "افزایش فروش", desc: "تا ۳۰٪ با کمپین‌های هوشمند" },
+				{
+					id: 4,
+					title: "افزایش فروش",
+					desc: "تا ۳۰٪ با کمپین‌های هوشمند",
+				},
 			],
 			order: 1,
 		});
@@ -87,6 +96,8 @@ async function seed() {
 			heroImage: "/images/hero/restaurant.jpg",
 			ctaText: "همین حالا مشاوره رایگان دریافت کنید",
 			activeStores: "۵۶۰۰",
+			keywords:
+				"رستوران, افزایش فروش, پیامک تبلیغاتی, باشگاه مشتریان, دایرکت",
 		})
 		.onConflictDoNothing()
 		.returning({ id: pageContents.id });
@@ -98,18 +109,25 @@ async function seed() {
 			title: "مزایای دایرکت برای رستوران",
 			items: [
 				{
+					id: 1,
 					title: "جمع‌آوری شماره هنگام پرداخت",
 					desc: "هر مشتری که صورت‌حساب پرداخت می‌کند",
 				},
 				{
+					id: 2,
 					title: "ارسال منوی روزانه و پیشنهاد ویژه",
 					desc: "جذب مشتری بیشتر",
 				},
 				{
+					id: 3,
 					title: "کمپین‌های جشنواره و تخفیف",
 					desc: "افزایش فروش در مناسبت‌ها",
 				},
-				{ title: "حفظ مشتریان ثابت", desc: "وفادارسازی بلندمدت" },
+				{
+					id: 4,
+					title: "حفظ مشتریان ثابت",
+					desc: "وفادارسازی بلندمدت",
+				},
 			],
 			order: 1,
 		});
@@ -131,6 +149,8 @@ async function seed() {
 			heroImage: "/images/hero/clothing-store-features.jpg",
 			ctaText: "آماده‌اید فروشگاه خود را هوشمند کنید؟",
 			activeStores: "۱۱۰۰۰",
+			keywords:
+				"فروشگاه پوشاک, افزایش فروش, پیامک تبلیغاتی, باشگاه مشتریان, دایرکت",
 		})
 		.onConflictDoNothing()
 		.returning({ id: pageContents.id });
@@ -142,22 +162,25 @@ async function seed() {
 			title: "ویژگی‌های کلیدی",
 			items: [
 				{
+					id: 1,
 					title: "جمع‌آوری خودکار شماره مشتریان",
 					desc: "در ورودی فروشگاه و هنگام پرداخت",
 				},
 				{
+					id: 2,
 					title: "دسته‌بندی هوشمند مشتریان",
 					desc: "بر اساس خریدهای قبلی، فصل و جنسیت",
 				},
 				{
+					id: 3,
 					title: "ارسال پیامک حراج و تخفیف فصلی",
 					desc: "هدفمند و شخصی‌سازی شده",
 				},
 				{
+					id: 4,
 					title: "اطلاع‌رسانی موجودی سایز و رنگ",
 					desc: "به مشتریان علاقه‌مند",
 				},
-				{ title: "گزارش عملکرد کمپین‌ها", desc: "تحلیل دقیق نتایج" },
 			],
 			order: 1,
 		});
@@ -179,6 +202,8 @@ async function seed() {
 			heroImage: "/images/hero/restaurant-features.jpg",
 			ctaText: "آماده‌اید رستوران خود را هوشمند کنید؟",
 			activeStores: "۵۶۰۰",
+			keywords:
+				"رستوران, افزایش فروش, پیامک تبلیغاتی, باشگاه مشتریان, دایرکت",
 		})
 		.onConflictDoNothing()
 		.returning({ id: pageContents.id });
@@ -190,19 +215,21 @@ async function seed() {
 			title: "ویژگی‌های کلیدی",
 			items: [
 				{
+					id: 1,
 					title: "جمع‌آوری شماره هنگام پرداخت",
 					desc: "صورت‌حساب مشتریان",
 				},
 				{
+					id: 2,
 					title: "ارسال منوی روزانه و پیشنهاد ویژه",
 					desc: "از طریق پیامک",
 				},
-				{ title: "رزرو میز از طریق پیامک", desc: "ساده و سریع" },
+				{ id: 3, title: "رزرو میز از طریق پیامک", desc: "ساده و سریع" },
 				{
+					id: 4,
 					title: "کمپین کاهش ضایعات غذایی",
 					desc: "اطلاع‌رسانی غذای باقی‌مانده",
 				},
-				{ title: "نظرسنجی سریع پس از غذا", desc: "بهبود کیفیت خدمات" },
 			],
 			order: 1,
 		});

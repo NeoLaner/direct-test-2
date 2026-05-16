@@ -9,6 +9,7 @@ import {
 	uniqueIndex,
 	varchar,
 } from "drizzle-orm/pg-core";
+import type { SectionItems } from "../lib/types";
 
 // ========================
 // محتوای اصلی صفحه
@@ -19,13 +20,12 @@ export const pageContents = pgTable(
 	{
 		id: serial("id").primaryKey(),
 
-		// ترکیب این دو فیلد باید منحصر به فرد باشد
 		pageTypeSlug: varchar("page_type_slug", { length: 50 }).notNull(),
 		industrySlug: varchar("industry_slug", { length: 100 }).notNull(),
 
-		//
 		title: varchar("title", { length: 255 }).notNull(),
 		metaDescription: text("meta_description").notNull(),
+		keywords: text("keywords").notNull(), // ← اضافه شد
 
 		heroHeadline: text("hero_headline").notNull(),
 		heroSubheadline: text("hero_subheadline").notNull(),
@@ -39,7 +39,6 @@ export const pageContents = pgTable(
 		createdAt: timestamp("created_at").defaultNow().notNull(),
 		updatedAt: timestamp("updated_at").defaultNow().notNull(),
 	},
-	// === Composite Unique Key ===
 	(table) => ({
 		pageTypeIndustryUnique: uniqueIndex("page_type_industry_unique").on(
 			table.pageTypeSlug,
@@ -61,18 +60,14 @@ export const pageSections = pgTable("page_sections", {
 
 	sectionType: varchar("section_type", { length: 50 }).notNull(),
 	title: varchar("title", { length: 150 }).notNull(),
-	items: jsonb("items")
-		.$type<Array<{ title: string; desc: string }>>()
-		.notNull(),
+
+	items: jsonb("items").$type<SectionItems>().notNull(),
 	order: integer("order").notNull().default(0),
 
 	createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-// ========================
 // Relations
-// ========================
-
 export const pageContentsRelations = relations(pageContents, ({ many }) => ({
 	sections: many(pageSections),
 }));
