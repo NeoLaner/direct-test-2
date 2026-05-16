@@ -17,7 +17,8 @@ export default async function RootLayout({
 	return (
 		<html
 			suppressHydrationWarning
-			lang="en"
+			lang="fa"
+			dir="rtl"
 			className={`${GeistSans.variable}`}
 		>
 			<body>
