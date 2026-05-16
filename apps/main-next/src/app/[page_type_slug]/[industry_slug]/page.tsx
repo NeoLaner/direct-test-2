@@ -1,9 +1,10 @@
 import { safe } from "@orpc/client";
-import { Button } from "@workspace/ui/components/shadcn-ui/button";
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { api } from "~/lib/orpc/server";
+import { Cta } from "./_ui/cta";
+import Hero from "./_ui/hero";
+import Sections from "./_ui/sections";
 
 type Props = {
 	params: Promise<{
@@ -78,76 +79,28 @@ export default async function Page({ params }: Props) {
 	return (
 		<div className="flex min-h-svh flex-col gap-20 px-4 md:px-8">
 			{/* Hero Section */}
-			<section className="text-center md:text-right">
-				<div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-stretch">
-					<div className="flex flex-col items-center gap-10 px-4 py-6 md:items-stretch">
-						<div className="flex-1">
-							<h1 className="mb-6 font-bold text-4xl">
-								{pageData.heroHeadline}
-							</h1>
-							<p className="text-muted-foreground text-sm">
-								{pageData.heroSubheadline}
-							</p>
-						</div>
-
-						<Button size={"lg"} className="w-fit">
-							<span className="">دریافت مشاوره رایگان</span>
-							<span>&larr;</span>{" "}
-						</Button>
-					</div>
-
-					<div className="relative flex aspect-16/13 w-2/3 items-center justify-center rounded-2xl bg-primary md:w-lg lg:w-3xl">
-						<Image
-							src={pageData.heroImage}
-							alt={pageData.title}
-							className="rounded-2xl"
-							priority
-							fill
-						/>
-					</div>
-				</div>
-			</section>
+			<Hero>
+				<Hero.Content
+					headline={pageData.heroHeadline}
+					subheadline={pageData.heroSubheadline}
+					buttonText="دریافت مشاوره رایگان"
+				/>
+				<Hero.Image src={pageData.heroImage} alt={pageData.title} />
+			</Hero>
 
 			{/* Main Content */}
-			<main className="mx-auto">
+			<Sections>
 				{pageData.sections.map((section) => (
-					<div key={section.id} className="mb-16 w-full">
-						<h3 className="mb-8 text-center font-semibold text-3xl">
-							{section.title}
-						</h3>
-
-						<div className="flex flex-col gap-4 md:flex-row">
-							{section.items.map((item) => (
-								<div
-									key={item.id}
-									className="flex-1 rounded-2xl border p-4 shadow-sm md:p-8"
-								>
-									<h4 className="mb-2 font-semibold">
-										{item.title}
-									</h4>
-									<p className="text-muted-foreground text-sm">
-										{item.desc}
-									</p>
-								</div>
-							))}
-						</div>
-					</div>
+					<Sections.Item
+						key={section.id}
+						title={section.title}
+						items={section.items}
+					/>
 				))}
 
 				{/* CTA */}
-				<div className="mt-16 flex flex-col items-center justify-between gap-8 rounded-2xl p-4 text-center md:flex-row md:bg-accent md:text-right md:text-accent-foreground">
-					<div>
-						<h4 className="font-bold text-lg">
-							{pageData.ctaText}
-						</h4>
-						<span className="text-xs">
-							کارشناسان ما آماده کمک به رشد کسب و کار شما هستند
-						</span>
-					</div>
-
-					<Button size={"lg"}>شروع کنید</Button>
-				</div>
-			</main>
+				<Cta ctaText={pageData.ctaText} />
+			</Sections>
 		</div>
 	);
 }
