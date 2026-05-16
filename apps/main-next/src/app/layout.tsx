@@ -1,6 +1,6 @@
-import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { Providers } from "~/providers/providers";
+import { vazirmatn } from "./fonts";
 import "~/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default async function RootLayout({
 			suppressHydrationWarning
 			lang="fa"
 			dir="rtl"
-			className={`${GeistSans.variable}`}
+			className={`${vazirmatn.variable}`}
 		>
 			<body>
 				<Providers>{children}</Providers>
