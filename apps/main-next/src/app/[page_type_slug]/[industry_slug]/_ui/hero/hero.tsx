@@ -12,7 +12,7 @@ function Hero({
 }) {
 	return (
 		<section className={cn("text-center md:text-right", className)}>
-			<div className="flex flex-col items-center justify-center gap-10 md:flex-row md:items-stretch">
+			<div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-stretch">
 				{children}
 			</div>
 		</section>

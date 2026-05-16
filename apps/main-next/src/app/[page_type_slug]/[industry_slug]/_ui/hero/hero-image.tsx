@@ -11,11 +11,17 @@ export function HeroImage({ src, alt, className }: HeroImageProps) {
 	return (
 		<figure
 			className={cn(
-				"relative flex aspect-16/13 w-2/3 items-center justify-center rounded-2xl bg-primary md:w-lg lg:w-3xl",
+				"relative flex aspect-16/13 h-40 w-fit items-center justify-center rounded-2xl bg-primary sm:h-64 md:h-96",
 				className,
 			)}
 		>
-			<Image src={src} alt={alt} className="rounded-2xl" priority fill />
+			<Image
+				src={src}
+				alt={alt}
+				className="rounded-2xl object-cover md:w-lg lg:w-3xl"
+				priority
+				fill
+			/>
 		</figure>
 	);
 }

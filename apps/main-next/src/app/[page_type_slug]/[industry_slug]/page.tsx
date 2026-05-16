@@ -77,7 +77,7 @@ export default async function Page({ params }: Props) {
 	if (isDefined || !pageData) return notFound();
 
 	return (
-		<div className="flex flex-col gap-20 px-4 md:px-8">
+		<div className="flex flex-col gap-20 px-4 md:px-12">
 			{/* Hero Section */}
 			<Hero>
 				<Hero.Content

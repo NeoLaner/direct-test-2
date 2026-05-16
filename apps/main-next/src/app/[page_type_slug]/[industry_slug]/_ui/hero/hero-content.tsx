@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@workspace/ui/components/shadcn-ui/button";
 import { cn } from "@workspace/ui/lib/utils";
+import { usePageCtx } from "~/hooks/use-page-ctx";
 
 type HeroContentProps = {
 	headline: string;
@@ -13,9 +16,10 @@ export function HeroContent({
 	headline,
 	subheadline,
 	buttonText = "دریافت مشاوره رایگان",
-	onButtonClick,
 	className,
 }: HeroContentProps) {
+	const { scrollToCTA } = usePageCtx();
+
 	return (
 		<div
 			className={cn(
@@ -28,7 +32,7 @@ export function HeroContent({
 				<p className="text-muted-foreground text-sm">{subheadline}</p>
 			</div>
 
-			<Button size={"lg"} className="w-fit" onClick={onButtonClick}>
+			<Button size={"lg"} className="w-fit" onClick={scrollToCTA}>
 				<span className="">{buttonText}</span>
 				<span>&larr;</span>
 			</Button>
