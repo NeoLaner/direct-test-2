@@ -39,7 +39,7 @@ async function seed() {
 				"فروشگاه پوشاک خود را به کسب‌وکاری وفادارمحور تبدیل کنید",
 			heroSubheadline:
 				"جمع‌آوری شماره مشتریان و ارسال پیامک‌های هدفمند برای افزایش فروش فصلی",
-			heroImage: "/images/hero/clothing-store.jpg",
+			heroImage: "/images/hero/clothing-store.webp",
 			ctaText: "همین حالا مشاوره رایگان دریافت کنید",
 			activeStores: "۱۱۰۰۰",
 			keywords:
@@ -93,7 +93,7 @@ async function seed() {
 			heroHeadline: "رستوران خود را همیشه پر از مشتری نگه دارید",
 			heroSubheadline:
 				"با باشگاه مشتریان و پیامک‌های هوشمند فروش را افزایش دهید",
-			heroImage: "/images/hero/restaurant.jpg",
+			heroImage: "/images/hero/restaurant.webp",
 			ctaText: "همین حالا مشاوره رایگان دریافت کنید",
 			activeStores: "۵۶۰۰",
 			keywords:
@@ -146,7 +146,7 @@ async function seed() {
 			heroHeadline: "ویژگی‌های هوشمند دایرکت مخصوص فروشگاه پوشاک",
 			heroSubheadline:
 				"ابزارهایی که فروشگاه شما را به سطح بالاتری از مدیریت مشتری می‌رساند",
-			heroImage: "/images/hero/clothing-store-features.jpg",
+			heroImage: "/images/hero/clothing-store.webp",
 			ctaText: "آماده‌اید فروشگاه خود را هوشمند کنید؟",
 			activeStores: "۱۱۰۰۰",
 			keywords:
@@ -199,7 +199,7 @@ async function seed() {
 			heroHeadline: "ویژگی‌های هوشمند دایرکت مخصوص رستوران",
 			heroSubheadline:
 				"ابزارهایی که رستوران شما را همیشه پر از مشتری نگه می‌دارد",
-			heroImage: "/images/hero/restaurant-features.jpg",
+			heroImage: "/images/hero/restaurant.webp",
 			ctaText: "آماده‌اید رستوران خود را هوشمند کنید؟",
 			activeStores: "۵۶۰۰",
 			keywords:
