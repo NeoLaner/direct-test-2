@@ -8,9 +8,8 @@ export const env = createEnv({
 	 * isn't built with invalid env vars.
 	 */
 	server: {
-		AUTH_SECRET: z.string(),
 		DATABASE_URL: z.string().url(),
-		REDIS_URL: z.string().url(),
+
 		NODE_ENV: z
 			.enum(["development", "test", "production", "staging"])
 			.default("development"),
@@ -31,9 +30,7 @@ export const env = createEnv({
 	 * middlewares) or client-side so we need to destruct manually.
 	 */
 	runtimeEnv: {
-		AUTH_SECRET: process.env.AUTH_SECRET,
 		DATABASE_URL: process.env.DATABASE_URL,
-		REDIS_URL: process.env.REDIS_URL,
 		NODE_ENV: process.env.NODE_ENV,
 		DRIZZLE_LOGGER: process.env.DRIZZLE_LOGGER === "true",
 		NEXT_PUBLIC_NODE_ENV: process.env.NODE_ENV,
