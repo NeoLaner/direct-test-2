@@ -32,12 +32,12 @@ const config = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "placehold.co",
+				hostname: "lh3.googleusercontent.com",
 			},
 		],
 	},
 
-	allowedDevOrigins: ["ggdeal.org", "*.ggdeal.org", "192.168.1.100"],
+	allowedDevOrigins: ["192.168.1.100"],
 };
 
 export default config;
