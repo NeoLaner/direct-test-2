@@ -7,6 +7,7 @@
     "build": "turbo build",
     "start": "turbo start",
     "dev": "turbo dev",
+    "preview": "turbo preview",
     "check": "turbo check",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
