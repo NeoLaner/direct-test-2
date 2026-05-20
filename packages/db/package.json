@@ -19,20 +19,20 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"drizzle-orm": "^0.44.7",
-		"drizzle-zod": "^0.8.3",
-		"postgres": "^3.4.7",
-		"zod": "^3.25.76"
+		"drizzle-orm": "catalog:",
+		"drizzle-zod": "catalog:",
+		"postgres": "catalog:",
+		"zod": "catalog:"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.3.8",
-		"@turbo/gen": "^2.6.1",
-		"@types/node": "^22.19.1",
+		"@biomejs/biome": "catalog:",
+		"@turbo/gen": "catalog:",
+		"@types/node": "catalog:",
 		"@workspace/typescript-config": "workspace:*",
-		"cross-env": "^7.0.3",
+		"cross-env": "catalog:",
 		"drizzle-kit": "^0.31.7",
-		"tsx": "^4.21.1",
-		"typescript": "^5.9.3"
+		"tsx": "catalog:",
+		"typescript": "catalog:"
 	},
 	"exports": {
 		".": "./src/index.ts",

@@ -28,9 +28,9 @@
   },
   "devDependencies": {
     "@workspace/typescript-config": "workspace:*",
-    "drizzle-kit": "^0.31.7",
-    "turbo": "^2.6.1",
-    "typescript": "5.9.3"
+    "drizzle-kit": "^0.31.10",
+    "turbo": "^2.9.14",
+    "typescript": "catalog:"
   },
   "engines": {
     "node": ">=22"
