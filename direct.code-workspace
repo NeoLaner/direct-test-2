@@ -69,5 +69,7 @@
       "strem",
       "stremio"
     ],
+    "typescript.tsdk": "root/node_modules/typescript/lib",
   },
+  
 }

@@ -7,7 +7,7 @@ import {
 	pageSectionsRelations,
 } from "../tables";
 
-const conn = postgres(process.env.DATABASE_URL!);
+const conn = postgres(process.env.DATABASE_URL as string);
 
 const schema = {
 	pageContents,

@@ -1,7 +1,8 @@
+import "~/styles/globals.css";
+
 import type { Metadata } from "next";
 import { Providers } from "~/providers/providers";
 import { vazirmatn } from "./fonts";
-import "~/styles/globals.css";
 
 export const metadata: Metadata = {
 	title: "stream-tube",
